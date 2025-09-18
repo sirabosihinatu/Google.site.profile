@@ -1,33 +1,37 @@
-<!-- CSS-only hover image swap -->
+<!-- CSS-only hover image swap (完全切り替えバージョン) -->
 <style>
 .hover-swap {
   position: relative;
   width: 420px;   /* 必要に応じて変更 */
-  height: 280px;  /* 必要に応じて変更 */
+  height: 720px;  /* 必要に応じて変更 */
   overflow: hidden;
   border-radius: 8px;
 }
 
-/* ベース画像 */
-.hover-swap img.base,
-.hover-swap img.onhover {
-  position: absolute;
-  inset: 0;
+/* ベース画像（通常時） */
+.hover-swap img.base {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
-  transition: opacity 0.35s ease;
+  transition: opacity 0.3s ease;
 }
 
-/* ホバー時に上の画像をフェードイン */
+/* ホバー時に非表示 */
+.hover-swap:hover img.base {
+  display: none;
+}
+
+/* ホバー時の画像 */
 .hover-swap img.onhover {
-  opacity: 0;
-  pointer-events: none;
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .hover-swap:hover img.onhover {
-  opacity: 1;
+  display: block;
 }
 
 /* アクセシビリティ用ラベル */
@@ -46,5 +50,4 @@
   <img class="onhover" src="https://raw.githubusercontent.com/sirabosihinatu/Google.site.profile/refs/heads/main/VRChat_2025-09-18_17-37-10.819_1440x2560.png" alt="ホバー時の説明">
   <span class="sr-only">（説明文）</span>
 </div>
-
 
