@@ -1,27 +1,48 @@
-<!-- js-hover.html (ホスティングして iframe 埋め込み用) -->
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<title>Hover Swap</title>
+<!-- CSS-only hover image swap + custom open hand cursor -->
 <style>
-#swap { width:420px; height:720px; }
+.hover-swap {
+  position: relative;
+  width: 420px;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 8px;
+
+  /* カーソルをパーの手に変更 */
+  cursor: url("https://raw.githubusercontent.com/sirabosihinatu/Google.site.profile/refs/heads/main/ChatGPT%20Image%202025%E5%B9%B49%E6%9C%8818%E6%97%A5%2018_28_33.png") 16 16, pointer;
+}
+
+/* ベース画像 */
+.hover-swap img.base,
+.hover-swap img.onhover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.35s ease;
+}
+
+.hover-swap img.onhover { 
+  opacity: 0; 
+  pointer-events: none; 
+}
+.hover-swap:hover img.onhover { 
+  opacity: 1; 
+}
+
+.hover-swap .sr-only {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 </style>
-</head>
-<body>
-<img id="swap" src="https://raw.githubusercontent.com/sirabosihinatu/Google.site.profile/refs/heads/main/VRChat_2025-09-18_17-37-47.335_1440x2560.png" alt="">
-<script>
-const el = document.getElementById('swap');
-const normal = 'https://raw.githubusercontent.com/sirabosihinatu/Google.site.profile/refs/heads/main/VRChat_2025-09-18_17-37-47.335_1440x2560.png';
-const hover =  'https://raw.githubusercontent.com/sirabosihinatu/Google.site.profile/refs/heads/main/VRChat_2025-09-18_17-37-10.819_1440x2560.png';
-el.addEventListener('mouseover', ()=> el.src = hover);
-el.addEventListener('mouseout',  ()=> el.src = normal);
-</script>
-</body>
-</html>
 
-
-
-
-
+<div class="hover-swap" role="img" aria-label="画像説明">
+  <img class="base" src="https://raw.githubusercontent.com/sirabosihinatu/Google.site.profile/refs/heads/main/VRChat_2025-09-18_17-37-47.335_1440x2560.png" alt="通常時の説明">
+  <img class="onhover" src="https://raw.githubusercontent.com/sirabosihinatu/Google.site.profile/refs/heads/main/VRChat_2025-09-18_17-37-10.819_1440x2560.png" alt="ホバー時の説明">
+  <span class="sr-only">（説明文）</span>
+</div>
