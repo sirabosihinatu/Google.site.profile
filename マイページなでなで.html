@@ -1,0 +1,22 @@
+<!-- js-hover.html (ホスティングして iframe 埋め込み用) -->
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Hover Swap</title>
+<style>
+#swap { width:1440px; height:2560px; }
+</style>
+</head>
+<body>
+<img id="swap" src="https://raw.githubusercontent.com/sirabosihinatu/Google.site.profile/refs/heads/main/VRChat_2025-09-18_17-37-47.335_1440x2560.png?token=GHSAT0AAAAAADLNLPROZ5PSZUOPNZZDR5VA2GLZBNA" alt="">
+<script>
+const el = document.getElementById('swap');
+const normal = 'https://raw.githubusercontent.com/sirabosihinatu/Google.site.profile/refs/heads/main/VRChat_2025-09-18_17-37-47.335_1440x2560.png?token=GHSAT0AAAAAADLNLPROZ5PSZUOPNZZDR5VA2GLZBNA';
+const hover =  'https://raw.githubusercontent.com/sirabosihinatu/Google.site.profile/refs/heads/main/VRChat_2025-09-18_17-37-10.819_1440x2560.png?token=GHSAT0AAAAAADLNLPRPLYMW6SDYSH562IBE2GLZA7A';
+el.addEventListener('mouseover', ()=> el.src = hover);
+el.addEventListener('mouseout',  ()=> el.src = normal);
+</script>
+</body>
+</html>
