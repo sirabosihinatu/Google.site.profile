@@ -1,14 +1,11 @@
-<!-- CSS-only hover image swap + custom open hand cursor -->
+<!-- CSS-only hover image swap -->
 <style>
 .hover-swap {
   position: relative;
-  width: 420px;
-  height: 720px;
+  width: 420px;   /* 必要に応じて変更 */
+  height: 280px;  /* 必要に応じて変更 */
   overflow: hidden;
   border-radius: 8px;
-
-  /* カーソルをパーの手に変更 */
-  cursor: url("https://raw.githubusercontent.com/sirabosihinatu/Google.site.profile/refs/heads/main/ChatGPT%20Image%202025%E5%B9%B49%E6%9C%8818%E6%97%A5%2018_28_33.png") 16 16, pointer;
 }
 
 /* ベース画像 */
@@ -23,17 +20,20 @@
   transition: opacity 0.35s ease;
 }
 
-.hover-swap img.onhover { 
-  opacity: 0; 
-  pointer-events: none; 
-}
-.hover-swap:hover img.onhover { 
-  opacity: 1; 
+/* ホバー時に上の画像をフェードイン */
+.hover-swap img.onhover {
+  opacity: 0;
+  pointer-events: none;
 }
 
+.hover-swap:hover img.onhover {
+  opacity: 1;
+}
+
+/* アクセシビリティ用ラベル */
 .hover-swap .sr-only {
   position: absolute;
-  left: 0px;
+  left: -9999px;
   top: auto;
   width: 1px;
   height: 1px;
