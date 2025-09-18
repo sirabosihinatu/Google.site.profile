@@ -1,37 +1,15 @@
-<!-- CSS-only hover image swap (完全切り替えバージョン) -->
 <style>
 .hover-swap {
-  position: relative;
   width: 420px;   /* 必要に応じて変更 */
   height: 280px;  /* 必要に応じて変更 */
-  overflow: hidden;
   border-radius: 8px;
-}
-
-/* ベース画像（通常時） */
-.hover-swap img.base {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: opacity 0.3s ease;
-}
-
-/* ホバー時に非表示 */
-.hover-swap:hover img.base {
-  display: none;
+  background: url("https://raw.githubusercontent.com/sirabosihinatu/Google.site.profile/refs/heads/main/VRChat_2025-09-18_17-37-47.335_1440x2560.png") center/cover no-repeat;
+  transition: background-image 0.3s ease;
 }
 
 /* ホバー時の画像 */
-.hover-swap img.onhover {
-  display: none;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hover-swap:hover img.onhover {
-  display: block;
+.hover-swap:hover {
+  background-image: url("https://raw.githubusercontent.com/sirabosihinatu/Google.site.profile/refs/heads/main/VRChat_2025-09-18_17-37-10.819_1440x2560.png");
 }
 
 /* アクセシビリティ用ラベル */
@@ -46,7 +24,5 @@
 </style>
 
 <div class="hover-swap" role="img" aria-label="画像説明">
-  <img class="base" src="https://raw.githubusercontent.com/sirabosihinatu/Google.site.profile/refs/heads/main/VRChat_2025-09-18_17-37-47.335_1440x2560.png" alt="通常時の説明">
-  <img class="onhover" src="https://raw.githubusercontent.com/sirabosihinatu/Google.site.profile/refs/heads/main/VRChat_2025-09-18_17-37-10.819_1440x2560.png" alt="ホバー時の説明">
   <span class="sr-only">（説明文）</span>
 </div>
